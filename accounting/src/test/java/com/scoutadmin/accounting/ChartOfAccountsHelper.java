@@ -176,20 +176,5 @@ public class ChartOfAccountsHelper {
 		return chart;
 	}
 	
-	public static void print( ChartOfAccounts chart ) {
-		for( Account account: chart.getTopLevelAccounts() ) {
-			System.out.println( account );
-			print( chart, 1, account.getID() );
-		}
-	}
-	
-	public static void print( ChartOfAccounts chart, int indent, UUID parent ) {
-		for( Account account : chart.getChildAccounts( parent ) )  {
-			for( int i = 0; i < indent; i++ ) {
-				System.out.print( "   " );
-			}
-			System.out.println( account );
-			print(chart, indent + 1, account.getParentID());
-		}
-	}
+
 }
